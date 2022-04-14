@@ -1,131 +1,242 @@
 {
-    "version": "v1",
-    "config": {
-      "visState": {
-        "filters": [
-          {
-            "dataId": "ace",
-            "id": "vo18yorx",
-            "name": "DateTime",
-            "type": "timeRange",
-            "value": [
-              663046722470,
-              1301519405470
-            ],
-            "enlarged": true,
-            "plotType": "histogram",
-            "yAxis": null
-          }
-        ],
-        "layers": [
-          {
-            "id": "hty62yd",
-            "type": "point",
-            "config": {
-              "dataId": "earthquakes",
-              "label": "Point",
-              "color": [
-                23,
-                184,
-                190
-              ],
-              "columns": {
-                "lat": "Latitude",
-                "lng": "Longitude",
-                "altitude": null
-              },
-              "isVisible": true,
-              "visConfig": {
-                "radius": 10,
-                "fixedRadius": false,
-                "opacity": 0.39,
-                "outline": false,
-                "thickness": 2,
-                "colorRange": {
-                  "name": "ColorBrewer PRGn-6",
-                  "type": "diverging",
-                  "category": "ColorBrewer",
-                  "colors": [
-                    "#762a83",
-                    "#af8dc3",
-                    "#e7d4e8",
-                    "#d9f0d3",
-                    "#7fbf7b",
-                    "#1b7837"
-                  ],
-                  "reversed": false
-                },
-                "radiusRange": [
-                  4.2,
-                  96.2
-                ],
-                "hi-precision": false
-              }
-            },
-            "visualChannels": {
-              "colorField": {
-                "name": "Magnitude",
-                "type": "real"
-              },
-              "colorScale": "quantize",
-              "sizeField": {
-                "name": "Magnitude",
-                "type": "real"
-              },
-              "sizeScale": "sqrt"
-            }
-          }
-        ],
-        "interactionConfig": {
-          "tooltip": {
-            "fieldsToShow": {
-              "ace": [
-                "DateTime",
-                "Latitude",
-                "Longitude",
-                "Depth",
-                "Magnitude"
-              ]
-            },
-            "enabled": true
-          },
-          "brush": {
-            "size": 0.5,
-            "enabled": false
-          }
+  "config":{
+     "mapState":{
+        "bearing":-15.25,
+        "dragRotate":true,
+        "isSplit":false,
+        "latitude":40.739516322561585,
+        "longitude":-73.97755351753737,
+        "pitch":56.012527487172655,
+        "zoom":12.092072468526053
+     },
+     "mapStyle":{
+        "buildingLayer":{
+           "color":[
+              18,
+              25,
+              38
+           ],
+           "isVisible":false,
+           "opacity":0.7
         },
-        "layerBlending": "normal",
-        "splitMaps": []
-      },
-      "mapState": {
-        "bearing": 0,
-        "dragRotate": false,
-        "latitude": 28.05881309947238,
-        "longitude": -43.80009283836715,
-        "pitch": 0,
-        "zoom": 1.740491857794806,
-        "isSplit": false
-      },
-      "mapStyle": {
-        "styleType": "light",
-        "topLayerGroups": {},
-        "visibleLayerGroups": {
-          "border": false,
-          "building": true,
-          "label": true,
-          "land": true,
-          "road": true,
-          "water": true
+        "styleType":"ace-terrain",
+        "topLayerGroups":{
+
         },
-        "buildingLayer": {
-          "color": [
-            237,
-            237,
-            237
-          ],
-          "isVisible": false,
-          "opacity": 0.7
+        "visibleLayerGroups":{
+           "border":false,
+           "building":true,
+           "label":false,
+           "land":true,
+           "road":true,
+           "water":true
         }
-      }
-    }
-  }
+     },
+     "queryStatus":{
+        "pastQueries":[
+           {
+              "id":"o1bohfz7",
+              "label":"nyctrips.csv",
+              "queryOption":"csv",
+              "queryType":"file",
+              "size":12087115
+           }
+        ]
+     },
+     "visState":{
+        "filters":[
+           {
+              "dataId":"nyctrips",
+              "enlarged":false,
+              "id":"09vn5a0of",
+              "name":"tpep_pickup_datetime",
+              "plotType":"histogram",
+              "type":"timeRange",
+              "value":[
+                 1421300098000,
+                 1421352890000
+              ],
+              "yAxis":null
+           }
+        ],
+        "interactionConfig":{
+           "brush":{
+              "enabled":false,
+              "size":0.5
+           },
+           "tooltip":{
+              "enabled":false,
+              "fieldsToShow":{
+                 "o1bohfz7":[
+                    "VendorID",
+                    "tpep_pickup_datetime",
+                    "tpep_dropoff_datetime",
+                    "passenger_count",
+                    "trip_distance"
+                 ]
+              }
+           }
+        },
+        "layerBlending":"additive",
+        "layers":[
+           {
+              "config":{
+                 "color":[
+                    16,
+                    129,
+                    136
+                 ],
+                 "columns":{
+                    "lat0":"pickup_latitude",
+                    "lat1":"dropoff_latitude",
+                    "lng0":"pickup_longitude",
+                    "lng1":"dropoff_longitude"
+                 },
+                 "dataId":"nyctrips",
+                 "isVisible":false,
+                 "label":"pickup -\u003e dropoff arc",
+                 "visConfig":{
+                    "colorRange":{
+                       "category":"Uber",
+                       "colors":[
+                          "#5A1846",
+                          "#900C3F",
+                          "#C70039",
+                          "#E3611C",
+                          "#F1920E",
+                          "#FFC300"
+                       ],
+                       "name":"Global Warming",
+                       "type":"sequential"
+                    },
+                    "hi-precision":false,
+                    "opacity":0.37,
+                    "sizeRange":[
+                       0,
+                       10
+                    ],
+                    "targetColor":[
+                       59,
+                       30,
+                       177
+                    ],
+                    "thickness":1
+                 }
+              },
+              "id":"f29m0q",
+              "type":"arc",
+              "visualChannels":{
+                 "colorField":null,
+                 "colorScale":"quantile",
+                 "sizeField":null,
+                 "sizeScale":"linear"
+              }
+           },
+           {
+              "config":{
+                 "color":[
+                    36,
+                    115,
+                    189
+                 ],
+                 "columns":{
+                    "altitude":null,
+                    "lat":"pickup_latitude",
+                    "lng":"pickup_longitude"
+                 },
+                 "dataId":"nyctrips",
+                 "isVisible":true,
+                 "label":"pickup",
+                 "visConfig":{
+                    "colorRange":{
+                       "category":"Uber",
+                       "colors":[
+                          "#5A1846",
+                          "#900C3F",
+                          "#C70039",
+                          "#E3611C",
+                          "#F1920E",
+                          "#FFC300"
+                       ],
+                       "name":"Global Warming",
+                       "type":"sequential"
+                    },
+                    "fixedRadius":false,
+                    "hi-precision":false,
+                    "opacity":0.8,
+                    "outline":false,
+                    "radius":1,
+                    "radiusRange":[
+                       0,
+                       50
+                    ],
+                    "thickness":2
+                 }
+              },
+              "id":"4bonnee",
+              "type":"point",
+              "visualChannels":{
+                 "colorField":null,
+                 "colorScale":"quantile",
+                 "sizeField":null,
+                 "sizeScale":"linear"
+              }
+           },
+           {
+              "config":{
+                 "color":[
+                    34,
+                    63,
+                    154
+                 ],
+                 "columns":{
+                    "altitude":null,
+                    "lat":"dropoff_latitude",
+                    "lng":"dropoff_longitude"
+                 },
+                 "dataId":"nyctrips",
+                 "isVisible":true,
+                 "label":"dropoff",
+                 "visConfig":{
+                    "colorRange":{
+                       "category":"Uber",
+                       "colors":[
+                          "#5A1846",
+                          "#900C3F",
+                          "#C70039",
+                          "#E3611C",
+                          "#F1920E",
+                          "#FFC300"
+                       ],
+                       "name":"Global Warming",
+                       "type":"sequential"
+                    },
+                    "fixedRadius":false,
+                    "hi-precision":false,
+                    "opacity":0.8,
+                    "outline":false,
+                    "radius":8,
+                    "radiusRange":[
+                       0,
+                       50
+                    ],
+                    "thickness":2
+                 }
+              },
+              "id":"pnidnry",
+              "type":"point",
+              "visualChannels":{
+                 "colorField":null,
+                 "colorScale":"quantile",
+                 "sizeField":null,
+                 "sizeScale":"linear"
+              }
+           }
+        ],
+        "splitMaps":[
+
+        ]
+     }
+  },
+  "version":"v1"
+}
